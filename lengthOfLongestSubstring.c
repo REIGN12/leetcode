@@ -1,7 +1,10 @@
 #include<stdio.h>
-
+#define NUM 26
 int lengthOfLongestSubstring(char* s)
 {
+    int albet[NUM] = {}; 
+    
+
 
 }
 
