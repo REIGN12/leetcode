@@ -22,13 +22,15 @@ int lengthOfLongestSubstring(char* s)
         {
             if (albet[l] < i) albet[l] = -1;
         }
+        albet[s[i]-'a'] = i;    
+        albet[s[j]-'a'] = j;    
     }
     return res;
 }
 
 int main(int argc, char* argv[])
 {
-    int res = lengthOfLongestSubstring("aaa"/*argv[1]*/);
+    int res = lengthOfLongestSubstring(argv[1]);
     printf("%d\n",res);
     return 0;
 }
