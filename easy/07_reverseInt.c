@@ -7,6 +7,9 @@ const int MAX_INT = (unsigned)(-1) >> 1;
 const int MIN_INT = ~MAX_INT;
 const int L = 10;
 
+inline char* Int2s_r(int x);
+inline int isBounded(char* xs);
+
 // first change to string
 // caller free the mem
 char* Int2s_r(int x)
