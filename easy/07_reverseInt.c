@@ -20,17 +20,19 @@ char* Int2s_r(int x)
     else
     {
         int i = 0;
-        if(x<0) {res[i++] = '-'; x = -x;}
+        unsigned num; // 注意到最小的负数，其相反数不能用 Int32 表示！
+        if(x<0){res[i++]='-';num = (unsigned)(~x)+1;}
+        else num = x;
         int tmp;int c = 0;
         do
         {
-            tmp = x%10;
+            tmp = num%10;
             if(c || tmp)
             {
                 res[i++] = '0' + tmp;
                 c++;
             }
-        } while (x/=10);
+        } while (num/=10);
         res[i] = 0;
     }
     return res;
@@ -78,9 +80,12 @@ int reverse(int x)
 
 int main(int argc, char* argv[])
 {
-    
+    /*
+    int t = MIN_INT;
+    printf("%u\n",(unsigned)(-t));
+    */
     int tmp;//sscanf(argv[1],"%d",&tmp);
-    tmp = -2147483648;
+    tmp = 10;//-2147483648;
     printf("%d\n",tmp);
     printf("%d\n",MIN_INT);
     printf("%d\n",MAX_INT);
